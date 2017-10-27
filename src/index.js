@@ -5,10 +5,12 @@ const https = require('https');
 const express = require('express');
 const pify = require('pify');
 const createCert = require('create-cert');
+const bodyParser = require('body-parser');
 
 const createTestServer = opts => createCert(opts && opts.certificate)
 	.then(keys => {
 		const app = express();
+    app.use(bodyParser.text({type: 'text/xml'}));
 		const server = http.createServer(app);
 		const sslServer = https.createServer(keys, app);
 

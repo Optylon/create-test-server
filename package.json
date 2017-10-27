@@ -38,6 +38,7 @@
   "dependencies": {
     "create-cert": "^1.0.2",
     "express": "^4.15.3",
+    "body-parser": "^1.18.2",
     "pify": "^3.0.0"
   },
   "devDependencies": {
